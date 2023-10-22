@@ -1,0 +1,6 @@
+bot:
+  name: croctelegrambot
+  token: 6611223858:AAEve78yalZo9T4SoLndznuSky5GC3e34f0
+
+telegrambots:
+  enabled: true
