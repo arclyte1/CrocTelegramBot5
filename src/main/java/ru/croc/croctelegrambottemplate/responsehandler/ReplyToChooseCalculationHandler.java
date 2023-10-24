@@ -29,7 +29,7 @@ public class ReplyToChooseCalculationHandler extends ResponseHandler {
             return;
         }
         String messageToReplay = MessageFormat.format(
-            "Окей, я тебя понял, {0}. Начинаем расчет...",
+            "Окей, я тебя понял, {0}. Введи свой стартовый капитал, срок в годах и годовую процентную ставку.",
             MAP_CHATID_USERNAME.getOrDefault(chatId, "username")
         );
         promptWithKeyboardForState(

@@ -2,10 +2,7 @@ package ru.croc.croctelegrambottemplate.responsehandler.holder;
 
 import org.telegram.abilitybots.api.db.DBContext;
 import org.telegram.abilitybots.api.sender.SilentSender;
-import ru.croc.croctelegrambottemplate.responsehandler.ReplyToChooseCalculationHandler;
-import ru.croc.croctelegrambottemplate.responsehandler.ReplyToNameResponseHandler;
-import ru.croc.croctelegrambottemplate.responsehandler.ResponseHandler;
-import ru.croc.croctelegrambottemplate.responsehandler.StartResponseHandler;
+import ru.croc.croctelegrambottemplate.responsehandler.*;
 import ru.croc.croctelegrambottemplate.states.UserState;
 
 import java.util.Map;
@@ -32,7 +29,8 @@ public class ResponseHandlerHolder {
         responseHandlerMap = Stream.of(
             new StartResponseHandler(sender, dbContext),
             new ReplyToNameResponseHandler(sender, dbContext),
-            new ReplyToChooseCalculationHandler(sender, dbContext)
+            new ReplyToChooseCalculationHandler(sender, dbContext),
+            new ReplyToInvestCalculationsHandler(sender, dbContext)
         )
             .collect(Collectors.toMap(ResponseHandler::getUserState, Function.identity()));
     }
